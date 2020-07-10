@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+<record model="ir.ui.view" id="etudFormID">
+    <field name="name">etudiant.vue</field>
+    <field name="model">gestion.eleve</field>
+    <field name="arch" type="xml">
+        <form string="Etudiant">
+           <label  for="numero" string="Numero de l'etudiant" /><field name="nume"/>
+           <label  for="nom" string="Nom de l'etudiant" /><field name="nome"/>
+           <label  for="nom" string="Nom de classe" /><field name="nomc"/>
+        </form>
+    </field>
+</record>
+<record model="ir.actions.act_window" id="action_etudiants">
+    <field name="name">Etudiants</field>
+    <field name="res_model">gestion.eleve</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form,tree</field>
+</record>
+<menuitem id="menuecole" name="Gestion d'école"/>
+<menuitem name="Gestion d'ecole" id="main_menu" parent="menuecole"/>
+<menuitem name="Etudiants" id="gest_etud" parent="main_menu" action="action_etudiants"/>
+
+
+
+
+<record model="ir.ui.view" id="profFormID">
+    <field name="name">professeurs.vue</field>
+    <field name="model">gestion.professeur</field>
+    <field name="arch" type="xml">
+        <form string="Professeurs">
+           <label  for="numero" string="Numero du Professeur" /><field name="nump"/>
+           <label  for="nom" string="Nom du Professeur" /><field name="nomp"/>
+        </form>
+    </field>
+</record>
+<record model="ir.actions.act_window" id="action_profs">
+    <field name="name">Professeurs</field>
+    <field name="res_model">gestion.professeur</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form,tree</field>
+</record>
+<menuitem name="Professeurs" id="gest_prof" parent="main_menu" action="action_profs" />
+
+
+
+
+
+
+<record model="ir.ui.view" id="classFormID">
+    <field name="name">classe.vue</field>
+    <field name="model">gestion.classe</field>
+    <field name="arch" type="xml">
+        <form string="Classe">
+           <label  for="nom" string="Nom de Classe" /><field name="nomc"/>
+        </form>
+    </field>
+</record>
+<record model="ir.actions.act_window" id="action_class">
+    <field name="name">Classes</field>
+    <field name="res_model">gestion.classe</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form,tree</field>
+</record>
+<menuitem name="Classes" id="gest_classe" parent="main_menu" action="action_class"/>
+</data>
+</openerp>
