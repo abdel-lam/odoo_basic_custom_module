@@ -5,5 +5,6 @@
     'name': 'GestionSigl2019',
 	'summary': 'Module de gestion SIGL 2019',
     'version': '0.1',
+    'author' : 'lamrabti abdellatif',
     "data":['views/projet_view.xml']
 }
